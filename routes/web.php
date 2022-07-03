@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::namespace(value:"Site")->group(function()
-{
-        Route::get(uri:'/', action: 'HomeController@index')
+Route::namespace(value:'Site')->group(function() {
+        Route::get('/', 'HomeController@index');
 
-})
+});

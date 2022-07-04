@@ -31,8 +31,8 @@ Route::view('sobre','site.sobre.index')->name('site.about');
 //categorias
 Route::controller(CategoryController::class)->group(function()
 {
-    Route::get('produtos','index')->name('site.products');
-    Route::get('produtos/{slug}', 'show')->name('site.products.show');
+    Route::get('categorias','index')->name('site.products');
+    Route::get('categorias/{slug}', 'show')->name('site.products.show');
 }
 );
 

@@ -1,5 +1,7 @@
 @extends('layouts.site')
 
+@section('title','home')
+
 @section('content')
 <header>
     <div class="hero">

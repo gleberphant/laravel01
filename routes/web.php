@@ -18,21 +18,21 @@ use App\Http\Controllers\Site\ContactController;
 */
 
 //home
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class) ->name('site.home');
 
 //blog
-Route::get('blog', BlogController::class);
+Route::get('blog', BlogController::class)->name('site.blog');
 
 
 //sobre
-Route::view('sobre','site.sobre.index');
+Route::view('sobre','site.sobre.index')->name('site.about');
 
 
 //categorias
 Route::controller(CategoryController::class)->group(function()
 {
-    Route::get('categorias','index');
-    Route::get('categorias/{slug}', 'show');
+    Route::get('categorias','index')->name('site.products');
+    Route::get('categorias/{slug}', 'show')->name('site.products.show');
 }
 );
 
@@ -40,9 +40,9 @@ Route::controller(CategoryController::class)->group(function()
 Route::controller(ContactController::class)->group(function()
 {
 
-    Route::get('contato','index');
+    Route::get('contato','index')->name('site.contact');
 
-    Route::post('contato','create');
+    Route::post('contato','create')->name('site.contact.form');
 
 });
 
